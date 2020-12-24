@@ -1,18 +1,73 @@
-import React from 'react'
-import {Card} from './Card'
-import {CardsContainer} from './styles/styles'
-export const Container = ()=>(
-    <div>
-        <div>
-            <input type="text" placeholder="Search for a country"/>
-        </div>
-    <CardsContainer>
-        <Card/>
-       <Card/>
-       <Card/>
-       <Card/>
-       <Card/>
-       <Card/>
-    </CardsContainer>
-    </div>
-)
+import React,{useEffect, useState} from 'react'
+import {ContainerDiv} from './styles/styles'
+import CardsContainer from './CardsContainer'
+import {Inputs} from './styles/styles'
+export const Container = ()=>{
+    const [countries, setCountries] = useState([])
+    const Search =(e)=>{
+        if(e.target.value === ""){
+            getCountries()
+        }else{
+            const text = e.target.value.trim()
+            setCountries([])
+            fetch(`https://restcountries.eu/rest/v2/name/${text}`)
+            .then(res=>res.json())
+            .then(data => {
+                if(data.status === 400){
+                    setCountries(countries)
+                }else{
+                    setCountries(data)
+                }
+               
+            })
+            .catch(err => console.log(err))
+           
+        }
+       
+    }
+    const UpdateRegion = (e)=>{
+        if(e.target.value === ""){
+            getCountries()
+        }else{
+            setCountries([])
+            fetch(`https://restcountries.eu/rest/v2/region/${e.target.value}`)
+            .then(res=>res.json())
+            .then(data => setCountries(data))
+            .catch(err => console.log(err))
+        }
+    }
+    const getCountries = ()=>{
+        fetch("https://restcountries.eu/rest/v2/all")
+        .then(res => res.json())
+        .then(data=> setCountries(data))
+        .catch(err => console.log(err))
+    }
+    useEffect(()=>{
+       
+        return(
+            getCountries()
+        )
+       
+    },[])
+    return(
+            <ContainerDiv>
+                <Inputs>
+                    <div>
+                        <ion-icon name="search-outline"></ion-icon>
+                        <input placeholder="Search for a country..." onChange={(e)=> Search(e)}/>
+                    </div>
+                    <div>
+                    <select placeholder="iaauu" onChange={(e)=> UpdateRegion(e)}>
+                            <option value="" defaultChecked>Filter by Region</option>
+                            <option value="africa">Africa</option>
+                            <option value="americas">Americas</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="oceania">Oceania</option>
+                        </select>
+                    </div>   
+                </Inputs>
+                <CardsContainer countries={countries}/>
+            </ContainerDiv>
+    )
+}
