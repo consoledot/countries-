@@ -1,9 +1,9 @@
-import React, {useState, useEffect} from 'react'
-import { ContainerDiv } from "./styles/styles";
-import {CardInfoContainer} from './styles/styles'
-import {Button} from './styles/styles'
+import {useState, useEffect} from 'react'
+import { ContainerDiv } from "../styles/styles";
+import {CardInfoContainer} from '../styles/styles'
+import {Button} from '../styles/styles'
 import {Link} from 'react-router-dom'
-import {CountryDescription} from './styles/styles'
+import {CountryDescription} from '../styles/styles'
 import {Loading} from './Loading'
 
 export const CardInfo = (props)=>{
@@ -30,7 +30,9 @@ export const CardInfo = (props)=>{
     }  
     return(
        <ContainerDiv>
-           <Link to="/" style={{color:"unset", textDecoration:"none"}}><Button>Back</Button></Link>
+           <Link to="/" style={{color:"unset", textDecoration:"none"}}>
+               <Button Link><ion-icon name="arrow-back-outline"></ion-icon>  Back</Button>
+            </Link>
            <CardInfoContainer>
                 <div>
                     <img src={country.flag} alt={country.name}/>

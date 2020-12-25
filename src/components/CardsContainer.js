@@ -1,6 +1,6 @@
-import React from 'react'
+
 import {Card} from './Card'
-import {CardsContainer} from './styles/styles'
+import {CardsContainer} from '../styles/styles'
 import {Loading} from './Loading'
 const Container = ({countries})=>{
     if(countries.length <= 0){

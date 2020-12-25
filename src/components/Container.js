@@ -1,7 +1,7 @@
-import React,{useEffect, useState} from 'react'
-import {ContainerDiv} from './styles/styles'
+import {useEffect, useState} from 'react'
+import {ContainerDiv} from '../styles/styles'
 import CardsContainer from './CardsContainer'
-import {Inputs} from './styles/styles'
+import {Inputs} from '../styles/styles'
 import {Error} from './Error'
 export const Container = ()=>{
     const [countries, setCountries] = useState([])
@@ -60,13 +60,13 @@ export const Container = ()=>{
                         <input placeholder="Search for a country..." onChange={(e)=> Search(e)}/>
                     </div>
                     <div>
-                    <select placeholder="iaauu" onChange={(e)=> UpdateRegion(e)}>
-                            <option value="" defaultChecked>Filter by Region</option>
-                            <option value="africa">Africa</option>
-                            <option value="americas">Americas</option>
-                            <option value="asia">Asia</option>
-                            <option value="europe">Europe</option>
-                            <option value="oceania">Oceania</option>
+                        <select placeholder="iaauu" onChange={(e)=> UpdateRegion(e)}>
+                                <option value="" defaultChecked>Filter by Region</option>
+                                <option value="africa">Africa</option>
+                                <option value="americas">Americas</option>
+                                <option value="asia">Asia</option>
+                                <option value="europe">Europe</option>
+                                <option value="oceania">Oceania</option>
                         </select>
                     </div>   
                 </Inputs>

@@ -1,5 +1,5 @@
-import React from 'react'
-import {CardContainer} from './styles/styles'
+
+import {CardContainer} from '../styles/styles'
 import {Link} from 'react-router-dom'
 export const Card = ({name,imgUrl,population,region,capital})=>{
     return (
