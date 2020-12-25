@@ -11,6 +11,7 @@ export const CardContainer = styled.div`
     border-radius:5px;
     cursor:pointer;
     background-color:white;
+    width:270px;
     img{
         border-top-right-radius:5px;
         border-top-left-radius:5px;
@@ -45,13 +46,13 @@ export const Inputs = styled.div`
        padding-left:1.5rem;
        display:flex;
        align-items:center;
-       width:40%;
    }
    input{
        border:none;
        margin-left:1.5rem;
        margin-top:0;
-       witdh:auto;
+       margin-right:4rem;
+       width:100%;
    }
    input,select{
     padding:10px;
@@ -102,4 +103,10 @@ export const Button = styled.button`
 export const CountryDescription = styled.div`
     display:flex;
     flex-wrap:wrap;
+`
+
+export const Container = styled.div`
+    margin:6rem auto;
+    text-align:center;
+    
 `

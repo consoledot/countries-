@@ -2,8 +2,10 @@ import React,{useEffect, useState} from 'react'
 import {ContainerDiv} from './styles/styles'
 import CardsContainer from './CardsContainer'
 import {Inputs} from './styles/styles'
+import {Error} from './Error'
 export const Container = ()=>{
     const [countries, setCountries] = useState([])
+    const [error, setError] = useState(false)
     const Search =(e)=>{
         if(e.target.value === ""){
             getCountries()
@@ -13,9 +15,10 @@ export const Container = ()=>{
             fetch(`https://restcountries.eu/rest/v2/name/${text}`)
             .then(res=>res.json())
             .then(data => {
-                if(data.status === 400){
-                    setCountries(countries)
+                if(data.status){
+                    setError(true)
                 }else{
+                    setError(false)
                     setCountries(data)
                 }
                
@@ -67,7 +70,7 @@ export const Container = ()=>{
                         </select>
                     </div>   
                 </Inputs>
-                <CardsContainer countries={countries}/>
+                {error ? <Error/>:<CardsContainer countries={countries}/>}
             </ContainerDiv>
     )
 }

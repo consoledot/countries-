@@ -4,6 +4,7 @@ import {CardInfoContainer} from './styles/styles'
 import {Button} from './styles/styles'
 import {Link} from 'react-router-dom'
 import {CountryDescription} from './styles/styles'
+import {Loading} from './Loading'
 
 export const CardInfo = (props)=>{
     const name = props.match.params.name
@@ -25,7 +26,7 @@ export const CardInfo = (props)=>{
     },[name])
   
     if(country.length <= 0){
-        return <h1>Loading</h1>
+        return <Loading/>
     }  
     return(
        <ContainerDiv>
