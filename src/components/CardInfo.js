@@ -31,7 +31,7 @@ export const CardInfo = (props)=>{
     return(
        <ContainerDiv>
            <Link to="/" style={{color:"unset", textDecoration:"none"}}>
-               <Button Link><ion-icon name="arrow-back-outline"></ion-icon>  Back</Button>
+               <Button Link> Back</Button>
             </Link>
            <CardInfoContainer>
                 <div>

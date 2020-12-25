@@ -112,10 +112,6 @@ export const Button = styled.button`
     padding: 0.5rem 1rem;
     margin:1rem 0;
     cursor:pointer;
-    display:flex;
-    align-items:center;
-    justfy-content-space-around;
-    gap: 0.7rem;
 `
 export const CountryDescription = styled.div`
     display:flex;
