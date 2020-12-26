@@ -1,6 +1,5 @@
 
-import {Container} from '../styles/styles'
-import {Button} from '../styles/styles'
+import {Container,Button} from '../styles/styles'
 
 export const Error = ()=>(
     <Container>

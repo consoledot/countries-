@@ -1,9 +1,6 @@
 import {useState, useEffect} from 'react'
-import { ContainerDiv } from "../styles/styles";
-import {CardInfoContainer} from '../styles/styles'
-import {Button} from '../styles/styles'
+import { ContainerDiv,CardInfoContainer,Button,CountryDescription } from "../styles/styles";
 import {Link} from 'react-router-dom'
-import {CountryDescription} from '../styles/styles'
 import {Loading} from './Loading'
 
 export const CardInfo = (props)=>{

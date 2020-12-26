@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react'
-import {ContainerDiv} from '../styles/styles'
+import {ContainerDiv,Inputs} from '../styles/styles'
 import CardsContainer from './CardsContainer'
-import {Inputs} from '../styles/styles'
 import {Error} from './Error'
 export const Container = ()=>{
     const [countries, setCountries] = useState([])
