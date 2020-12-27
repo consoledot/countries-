@@ -113,17 +113,23 @@ export const Button = styled.button`
     margin:1rem 0;
     cursor:pointer;
 `
+export const BorderButton = styled(Button)`
+    margin:0.2rem
+`
 export const CountryDescription = styled.div`
     display:flex;
     flex-wrap:wrap;
     div{
-        margin-top:1rem;
+        margin:1rem 2rem 5rem 0rem;
         p{
             padding:.3rem 0;
         }
     }
-    span{
+    span:nth-child(1){
         font-weight:600;
+    }
+    .languages{
+       display:inline-block;
     }
 
 `
