@@ -78,7 +78,7 @@ export const CardInfo = (props) => {
               </p>
               <p>
                 <span className="languages">Languages: </span>{" "}
-                {languages.map((lan, i) => (
+                {languages.map((lan) => (
                   <Languages key={lan.iso639_1} language={lan.name} />
                 ))}
               </p>
