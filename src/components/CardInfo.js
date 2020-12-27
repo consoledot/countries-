@@ -44,7 +44,6 @@ export const CardInfo = (props)=>{
                         <div>
                             <p><span>Top Level Domain: </span>{country.topLevelDomain}</p>
                             <p><span>Currencies: </span>{country.currencies[0].name}</p>
-                            <p><span>Native name: </span>{country.nativeName}</p>
                             <p><span className="languages">Languages: </span> {country.languages.map((lan,i)=> <Languages key={lan.iso639_1} language={lan.name}/>)}</p>
                         </div>
                     </CountryDescription>
