@@ -11,7 +11,7 @@ export const Card = ({name,imgUrl,population,region,capital})=>{
                     </div>
                     <div>
                         <h3>{name}</h3>
-                        <p><span className="text">Population: </span>{population}</p>
+                        <p><span className="text">Population: </span>{population.toLocaleString()}</p>
                         <p><span className="text">Region: </span>{region}</p>
                         <p><span className="text">Capital: </span>{capital}</p>
                     </div>
