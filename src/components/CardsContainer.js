@@ -9,7 +9,7 @@ const Container = ({countries})=>{
     return(
             <CardsContainer>
                 {countries.slice(0,20).map((country,index)=>(
-                    <Card key={index}imgUrl={country.flag} capital={country.capital} name={country.name} population={country.population} region={country.region}/>
+                    <Card key={index}imgUrl={country.flag} capital={country.capital} name={country.name} population={country.population.toLocaleString()} region={country.region}/>
                 ))}
             </CardsContainer>
         )
