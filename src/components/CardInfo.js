@@ -6,15 +6,11 @@ import {Loading} from './Loading'
 export const CardInfo = (props)=>{
     const name = props.match.params.name
     const [country, setCountry] = useState([])
-    const [languages, setLanguages] = useState([])
     useEffect(()=>{
         function getInfo(name){
             fetch(`https://restcountries.eu/rest/v2/name/${name}?fullText=true`)
             .then(res => res.json())
-            .then(data=> {
-                setCountry(data[0])
-                setLanguages(data[0].languages)
-            })
+            .then(data=> setCountry(data[0]))
             .catch(err=> console.log(err))
         }
         return(
@@ -49,7 +45,7 @@ export const CardInfo = (props)=>{
                             <p><span>Top Level Domain: </span>{country.topLevelDomain}</p>
                             <p><span>Currencies: </span>{country.currencies[0].name}</p>
                             <p><span>Native name: </span>{country.nativeName}</p>
-                            <p><span className="languages">Languages: </span> {languages.map((lan,i)=> <Languages key={lan.iso639_1} language={lan.name}/>)}</p>
+                            <p><span className="languages">Languages: </span> {country.languages.map((lan,i)=> <Languages key={lan.iso639_1} language={lan.name}/>)}</p>
                         </div>
                     </CountryDescription>
                     <div style={{display:"flex", alignItems:"center"}}>
