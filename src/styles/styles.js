@@ -38,11 +38,11 @@ export const Inputs = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: 1rem;
-
   div {
     margin-top: 0.5rem;
   }
   div:nth-child(1) {
+    width:26em;
     background-color: white;
     border-radius: 5px;
     padding-left: 1.5rem;
@@ -54,7 +54,6 @@ export const Inputs = styled.div`
     border: none;
     margin-left: 1.5rem;
     margin-top: 0;
-    margin-right: 4rem;
     width: 100%;
     ::placeholder {
       color: ${({ theme }) => theme.text};
