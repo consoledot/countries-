@@ -1,6 +1,6 @@
-import { Container } from "../styles/styles";
+import { Container, LoadingSpinner } from "../styles/styles";
 export const Loading = () => (
   <Container>
-    <h1>Loading</h1>
+    <LoadingSpinner/>
   </Container>
 );

@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled,{keyframes} from "styled-components";
+
 
 export const CardsContainer = styled.div`
   display: grid;
@@ -135,3 +136,19 @@ export const Container = styled.div`
   margin: 6rem auto;
   text-align: center;
 `;
+export const rotate = keyframes`
+  100% {
+    transform: rotate(360deg);
+  }
+`
+export const LoadingSpinner = styled.div`
+  pointer-events: none;
+  width: 10rem;
+  height: 10rem;
+  border: 0.2em solid transparent;
+  border-color: ${({ theme }) => theme.element};
+  border-top-color: ${({ theme }) => theme.text};
+  border-radius: 50%;
+  animation: ${rotate} 1s linear infinite;
+  margin: 15% auto;
+`

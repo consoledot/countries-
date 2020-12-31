@@ -100,7 +100,7 @@ export const CardInfo = (props) => {
 
 const Languages = ({ language }) => <span>{language} </span>;
 const Border = ({ border }) => {
-  const [borderName, setBorderName] = useState("");
+const [borderName, setBorderName] = useState("");
   useEffect(() => {
     function getBorders() {
       fetch(`https://restcountries.eu/rest/v2/alpha/${border}`)
