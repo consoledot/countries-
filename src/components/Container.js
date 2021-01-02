@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useRef } from "react";
 import { ContainerDiv, Inputs } from "../styles/styles";
 import CardsContainer from "./CardsContainer";
 import { Error } from "./Error";
 export const Container = () => {
   const [countries, setCountries] = useState([]);
   const [error, setError] = useState(false);
+  const inputval = useRef()
   const Search = (e) => {
     if (e.target.value === "") {
       getCountries();
@@ -36,9 +37,12 @@ export const Container = () => {
     }
   };
   const getCountries = () => {
+    inputval.current.value = ""
     fetch("https://restcountries.eu/rest/v2/all")
       .then((res) => res.json())
-      .then((data) => setCountries(data))
+      .then((data) => {
+        setError(false)
+        setCountries(data)})
       .catch((err) => console.log(err));
   };
   useEffect(() => {
@@ -50,6 +54,7 @@ export const Container = () => {
         <div>
           <ion-icon name="search-outline"></ion-icon>
           <input
+            ref={inputval}
             placeholder="Search for a country..."
             onChange={(e) => Search(e)}
           />
@@ -67,7 +72,7 @@ export const Container = () => {
           </select>
         </div>
       </Inputs>
-      {error ? <Error /> : <CardsContainer countries={countries} />}
+      {error ? <Error reload= {getCountries} /> : <CardsContainer countries={countries} />}
     </ContainerDiv>
   );
 };
