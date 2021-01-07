@@ -12,10 +12,9 @@ export const CardContainer = styled.div`
   cursor: pointer;
   width: 270px;
   margin: 0 auto;
+  overflow:hidden;
   background: ${({ theme }) => theme.element};
   img {
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
     width: 100%;
   }
   div:nth-child(2) {
